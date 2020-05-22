@@ -12,7 +12,8 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-feather": "^2.0.8",
-    "recoil": "0.0.7"
+    "recoil": "0.0.7",
+    "schema-utils": "^2.6.6"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^2.2.0",
