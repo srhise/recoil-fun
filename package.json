@@ -10,6 +10,13 @@
   "dependencies": {
     "next": "9.3.5",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "react-feather": "^2.0.8",
+    "recoil": "0.0.7"
+  },
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^2.2.0",
+    "autoprefixer": "^9.8.0",
+    "tailwindcss": "^1.4.6"
   }
 }
