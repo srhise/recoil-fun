@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useRecoilState } from "recoil";
 import { shapeWithID } from "../state/global";
+
 const SquareShape = (props) => {
   const [position, setPosition] = useRecoilState(shapeWithID(props.id));
 
