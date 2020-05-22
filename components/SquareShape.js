@@ -1,21 +1,20 @@
 import { useState } from "react";
 import { useRecoilState } from "recoil";
-import { shapeWithID } from "../state/global";
+import { shapeWithID, activeID } from "../state/global";
 
 const SquareShape = (props) => {
   const [position, setPosition] = useRecoilState(shapeWithID(props.id));
-
+  const [id, setActive] = useRecoilState(activeID);
   const [isDragging, setIsDragging] = useState(false);
 
   const handleMouseDown = ({ clientX, clientY }) => {
     window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("mouseup", handleMouseUp);
-
+    setActive(props.id);
     setPosition({
       ...position,
       originalX: clientX,
       originalY: clientY,
-      selected: true,
     });
     setIsDragging(true);
   };
@@ -48,18 +47,17 @@ const SquareShape = (props) => {
     }));
     setIsDragging(false);
   };
-  const selectedClass = position.selected
-    ? "border-purple-800"
-    : "border-gray-100";
+  const selectedClass = id === props.id ? "border-gray-100 border-dashed" : "";
 
   return (
     <div
-      className={`transition-colors ease-in duration-100  ${position.backgroundColor} cursor-pointer border-2 border-dashed ${selectedClass}`}
+      className={`transition-colors ease-in duration-100 cursor-pointer border-2 ${selectedClass}`}
       style={{
         width: `${position.width}px`,
         height: `${position.height}px`,
         transform: `translate(${position.translateX}px, ${position.translateY}px)`,
         cursor: "grab",
+        backgroundColor: position.backgroundColor,
       }}
       onMouseDown={handleMouseDown}
     ></div>

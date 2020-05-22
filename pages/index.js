@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Square, Circle } from "react-feather";
 import SquareShape from "../components/SquareShape";
 import Sidebar from "../components/Sidebar";
+import Options from "../components/Options";
 /*  
 Things to keep track of
 xpos
@@ -23,7 +24,7 @@ export default function Home() {
   };
 
   return (
-    <div className="container">
+    <div className="w-screen">
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
@@ -33,7 +34,7 @@ export default function Home() {
           <div className="menu w-64 bg-gray-300 h-screen">
             <div
               className="cursor-pointer text-blue-500 bg-white p-2 inline-flex rounded-sm shadow-sm m-1 hover:bg-gray-100"
-              onClick={() => addSquare()}
+              onClick={addSquare}
             >
               <Square width={15} height={15} color="#444" />
             </div>
@@ -57,6 +58,9 @@ export default function Home() {
                 ></SquareShape>
               );
             })}
+          </div>
+          <div className="menu w-64 p-2 bg-gray-300 h-screen">
+            <Options />
           </div>
         </div>
       </div>

@@ -16,7 +16,7 @@ const memoize = function (fnToMemoize) {
     if (!memoizedCache[propToCheck]) {
       memoizedCache[propToCheck] = fnToMemoize(...args);
     } else {
-      console.log("From Cache ");
+      // console.log("From Cache ");
     }
     return memoizedCache[propToCheck];
   };
@@ -34,7 +34,11 @@ export const shapeWithID = memoize((id) =>
       lastTranslateY: 0,
       width: 150,
       height: 150,
-      backgroundColor: "bg-gray-100",
+      backgroundColor: "blue",
     },
   })
 );
+export const activeID = atom({
+  key: "activeID",
+  default: null,
+});
