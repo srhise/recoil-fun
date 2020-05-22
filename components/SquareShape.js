@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useRecoilState } from "recoil";
 import { shapeWithID } from "../state/global";
-export function SquareShape(props) {
+const SquareShape = (props) => {
   const [position, setPosition] = useRecoilState(shapeWithID(props.id));
 
   const [isDragging, setIsDragging] = useState(false);
@@ -63,4 +63,6 @@ export function SquareShape(props) {
       onMouseDown={handleMouseDown}
     ></div>
   );
-}
+};
+
+export default SquareShape;
