@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "export": "next export"
   },
   "dependencies": {
     "next": "9.3.5",
@@ -13,9 +14,7 @@
     "react-dom": "16.13.1",
     "react-feather": "^2.0.8",
     "recoil": "0.0.7",
-    "schema-utils": "^2.6.6"
-  },
-  "devDependencies": {
+    "schema-utils": "^2.6.6",
     "@fullhuman/postcss-purgecss": "^2.2.0",
     "autoprefixer": "^9.8.0",
     "tailwindcss": "^1.4.6"
