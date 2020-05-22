@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useState } from "react";
 import { Square, Circle } from "react-feather";
-import { SquareShape } from "../components/SquareShape";
+import SquareShape from "../components/SquareShape";
 import Sidebar from "../components/Sidebar";
 /*  
 Things to keep track of
